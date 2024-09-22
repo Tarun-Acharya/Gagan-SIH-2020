@@ -1,60 +1,62 @@
-# **Suraksha - Smart Security System**
+## Smart India Hackathon -2020 for ISRO
+### Gagan - Image Masking and Solar Energy Analysis
+Solar energy is a vital source of electricity and an initiative for clean and renewable energy production. Solar energy potential at a particular region can be found efficiently by detecting local sky horizon. This technique involves separation of sky pixels and identifying the terrain from the image which could potentially obstruct the sun rays. 
 
-## **Overview**
+With the help of our application “Vyomang”, users can capture or upload an image through their devices. The image is uploaded to the cloud server and masked to a sky-ground image using Machine Learning techniques such as k-means clustering and semantic segmentation. 
 
-Suraksha is a sophisticated security system that combines face recognition, voice authentication, and password verification to create a hybrid security model. It helps safeguard confidential data through multi-level biometric verification, supporting emergency scenarios with fake passwords that alert security teams discreetly via email and SMS.
+At the end, along with the binary masked image, a detailed statistical report showing the variations in the energy potential across different seasons and weather conditions is produced. This helps the user to understand and develop an efficient energy policy for solar energy consumption.
 
-## **Tech Stack**
 
-- **Programming Language**: Python
-- **Libraries**: OpenCV, `face_recognition`, `speech_recognition`, `smtplib`, Fast2SMS API, `tkinter`
 
-## **System Requirements**
+### **Installation Guide**
 
-- Python 3.x
-- Webcam and microphone
-- Internet connection for email and SMS alerts
+The given file is in the format of .ipynb which cannot be opened using any notebook such as Google colab, jupyter, Kaggle etc.
 
-## **Installation Guide**
+The step by step description of the code written are explained in the markdowns.
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/suraksha-smart-security-system.git
-   cd suraksha-smart-security-system
-   ```
+Requirements:
 
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Additionally you might need to install:
 
-3. **Configure Email and SMS Alerts**
-   - Update email and Fast2SMS API details in `config.py`.
+    1.PIL    
+    2.opencv    
+    3.pvlib
 
-## **Running the Project**
+And any other module if found lacking in the notebook.
 
-### **1. Registering a User**
-To register a user with face, voice, and password:
-```bash
-python src/register.py
-```
+The file to execute properly might require 2 files
 
-### **2. Login Process**
-To verify user identity using face, voice, and password:
-```bash
-python src/login.py
-```
+ 1. Input image to be masked
+ 2. Data of usage of electrical appliances in the csv format.
+ 
+Upload the appliances.csv file and any test image from the zip file to the root folder of the source code.
 
-### **3. Starting the Main Application**
-To run the main security application:
-```bash
-python src/main.py
-```
+Make sure to change the name of the input image in the first code block near input_file identifier.
 
-### **4. Testing Alerts**
-To test the email and SMS alert system:
-```bash
-python src/alert.py
-```
+The code uses static input for the optics and coordinate calculations.
 
-Now your project is ready, and you can run it using the commands above!
+The focal length and pixel levels are input from a standard Motorola smartphone but could be dynamically extracted from the device the application will run on.
+
+The coordinated which are given as a static input could be extracted dynamically using GPS module in the smartphone.
+
+The output of the code could be seen after various code blocks that include:
+
+1. Masked image
+
+2. Lowest sky pixels on the image
+
+3. Angles of elevation for each lowest sky pixel
+
+4. Optimum elevation angles for different seasons
+
+5. Provision for solar panels
+
+6. Height of solar panels
+
+7. Solar energy potential
+
+8. No. of panels required based on the need of the client.
+
+9. Energy estimation based on usage.
+
+*Note: The code could be further optimized by using semantic segmentation with the help of deep neural networks and linking the code to the cloud so as to dynamically produced the result by a server request by any handheld device.*
